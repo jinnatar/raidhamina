@@ -1,0 +1,12 @@
+name,url
+Echofish,https://echofish.arcadia.nocturnal.fi
+Grafana,https://grafana.arcadia.nocturnal.fi
+LXC,http://phrenos.local:5000
+Salt,http://salt.lxc:20842
+Unifi,https://unifi.lxc:8443/manage
+Plex,https://plex.arcadia.nocturnal.fi
+Transmission,http://transmission.lxc:9091
+Nindx,http://phrenos.local/nindx
+HAProxy,http://persepolis.mythmardyl.org:27199
+MCMA,http://arcadia.nocturnal.fi:8081/
+MariaDB,http://sql.lxc:82/phpmyadmin/
