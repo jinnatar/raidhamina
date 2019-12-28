@@ -3,14 +3,26 @@ layout: portal
 ---
 
 <div id="apps" class="wrapper apps">
+  <h2>LAN</h2>
   <ul class="listing-apps">
-    {% for app in site.data.apps %}
+    {% for app in site.data.apps.apps.lan %}
     <li>
-      <a class="app-tile" href="{{app.url}}" data-appname="{{app.name}}">
+      <a class="app-tile" href="https://{{app[1]['domain']}}" data-appname="{{app[0]}}">
         <span class="first-letter"></span>
-        <span class="name">{{app.name}}</span>
+        <span class="name">{{app[0]}}</span>
       </a>
     </li>
-  {% endfor %}
+    {% endfor %}
+  </ul>
+  <h2>WAN</h2>
+  <ul class="listing-apps">
+    {% for app in site.data.apps.apps.wan %}
+    <li>
+      <a class="app-tile" href="https://{{app[1]['domain']}}" data-appname="{{app[0]}}">
+        <span class="first-letter"></span>
+        <span class="name">{{app[0]}}</span>
+      </a>
+    </li>
+    {% endfor %}
   </ul>
 </div>

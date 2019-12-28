@@ -1,0 +1,25 @@
+apps:
+  wan:
+    CC:
+      domain: cc.mythmardyl.org
+    Steward:
+      domain: steward.app
+  lan:
+    Arcadia:
+      domain: arcadia.nocturnal.fi
+    Echofish:
+      domain: echofish.arcadia.nocturnal.fi
+    Grafana:
+      domain: grafana.arcadia.nocturnal.fi
+    Unifi:
+      domain: sdn.arcadia.nocturnal.fi
+    Unifi-Video:
+      domain: video.arcadia.nocturnal.fi
+    Plex:
+      domain: plex.arcadia.nocturnal.fi
+    Tautulli:
+      domain: tautulli.arcadia.nocturnal.fi
+    Syncthing:
+      domain: sync.arcadia.nocturnal.fi
+    Transmission:
+      domain: transmission.arcadia.nocturnal.fi
