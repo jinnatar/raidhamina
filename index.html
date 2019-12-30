@@ -6,12 +6,14 @@ layout: portal
   <h2>LAN</h2>
   <ul class="listing-apps">
     {% for app in site.data.apps.lan %}
+    {% unless app[1]['portal'] == false %}
     <li>
       <a class="app-tile" href="https://{{app[1]['domain']}}" data-appname="{{app[0]}}">
         <span class="first-letter"></span>
         <span class="name">{{app[0]}}</span>
       </a>
     </li>
+    {% endunless %}
     {% endfor %}
   </ul>
   <h2>WAN</h2>
