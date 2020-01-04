@@ -8,7 +8,7 @@ layout: portal
     {% for app in site.data.apps.lan %}
     {% unless app[1]['portal'] == false %}
     <li>
-      <a class="app-tile" href="https://{{app[1]['domain']}}" data-appname="{{app[0]}}">
+      <a class="app-tile" href="https://{{app[1]['domain']}}{{app[1]['path']}}" data-appname="{{app[0]}}">
         <span class="first-letter"></span>
         <span class="name">{{app[0]}}</span>
       </a>
