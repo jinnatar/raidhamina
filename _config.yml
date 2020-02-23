@@ -9,7 +9,7 @@
 title: RaidHamina
 description: > # this means to ignore newlines until "baseurl:"
   RaidHamina ohjeet
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 basedomain: "raidhamina.nocturnal.fi"
 url: "https://raidhamina.nocturnal.fi" # the base hostname & protocol for your site
 theme: default
