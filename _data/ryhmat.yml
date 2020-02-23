@@ -1,0 +1,29 @@
+- slug: raidhamina
+  chat: RaidHaminaTalk
+  name: RaidHamina
+  help: "[Nostot](/nostot/), [Ilmoittautuminen](/ilmoittaudu/)"
+  description:  Isojen raidien nostot ja organisointi.
+
+- slug: raidhaminaofftopic
+  chat: RaidHaminaOfftopic
+  name: RaidHamina Offtopic
+  help: "[Nostot](/nostot/)"
+  description:  Sekalainen jutustelu ja pienien raidien nostot.
+
+- slug: raidhaminalowlevel
+  chat: RaidHaminaLowLevel
+  name: "RaidHamina Pienet (1*, 2*, 3*)"
+  help: "[Nostot](/nostot/)"
+  description: Automaattisesti kaikki pienet raidit.
+
+- slug: raidhaminahighlevel
+  chat: RaidHaminaHighLevel
+  name: "RaidHamina Isot (4*, 5*)"
+  help: "[Nostot](/nostot/)"
+  description: Automaattisesti kaikki isot raidit.
+
+- slug: exraid
+  chat: RaidHaminaEx
+  name: RaidHaminaEx
+  help: ""
+  description: Passien vaihdot ja Ex-Raidien organisointi.
