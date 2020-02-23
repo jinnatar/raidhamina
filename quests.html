@@ -1,0 +1,40 @@
+---
+layout: page
+title: Tehtävät
+hide: true
+---
+
+<table class="sortable">
+  <thead>
+    <tr class"header">
+      <th>Kuva</th>
+      <th>Sali</th>
+      <th>Sijainti</th>
+      <th>Palkinto</th>
+      <th>Tehtävä</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for quest in site.data.quests %}
+<tr>
+  <td>
+    <img class="circle-icon" src="{{quest.picture}}" />
+  </td>
+  <td>
+    {{quest.pokestop_name}}
+  </td>
+  <td>
+    <a href="https://maps.google.com/?q={{quest.coordinates}}">
+      {{quest.coordinates}}
+    </a>
+  </td>
+  <td>
+    {{quest.reward}}
+  </td>
+  <td>
+    {{quest.quest}}
+  </td>
+</tr>
+{% endfor %}
+  </tbody>
+</table>
