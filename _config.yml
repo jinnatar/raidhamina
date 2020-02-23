@@ -6,14 +6,14 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Arcadia
+title: RaidHamina
 description: > # this means to ignore newlines until "baseurl:"
-  Arcadia Portal
+  RaidHamina ohjeet
 baseurl: "/" # the subpath of your site, e.g. /blog
-basedomain: "arcadia.nocturnal.fi"
-url: "https://arcadia.nocturnal.fi" # the base hostname & protocol for your site
+basedomain: "raidhamina.nocturnal.fi"
+url: "https://raidhamina.nocturnal.fi" # the base hostname & protocol for your site
 theme: default
 
 # Build settings
 markdown: kramdown
-destination: /srv/www/ro/local
+destination: /srv/www/ro/raidhamina
