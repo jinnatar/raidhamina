@@ -1,36 +1,23 @@
 ---
-layout: portal
+layout: default
 ---
 
-<div id="apps" class="wrapper apps">
-  <h2>LAN</h2>
-  <ul class="listing-apps">
-    {% for app in site.data.apps.lan %}
-      {% assign name = app[0] %}
-      {% assign data = app[1] %}
-      {% unless data.portal == false %}
-    <li>
-      <a class="app-tile" href="https://{{data.domain}}{{data.path}}" data-appname="{{name}}">
-        <span class="first-letter"></span>
-        <span class="name">{{name}}</span>
-      </a>
-    </li>
-    {% endunless %}
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
     {% endfor %}
   </ul>
-  <h2>WAN</h2>
-  <ul class="listing-apps">
-    {% for app in site.data.apps.wan %}
-      {% assign name = app[0] %}
-      {% assign data = app[1] %}
-      {% unless data.portal == false %}
-    <li>
-      <a class="app-tile" href="https://{{data.domain}}{{data.path}}" data-appname="{{name}}">
-        <span class="first-letter"></span>
-        <span class="name">{{name}}</span>
-      </a>
-    </li>
-    {% endunless %}
-    {% endfor %}
-  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
 </div>
