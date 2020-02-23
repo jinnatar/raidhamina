@@ -1,0 +1,20 @@
+.flex-container {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+    }
+
+.flex-item {
+    flex: 0 1 auto;
+    align-self: auto;
+    box-shadow: -2px -4px rgba(0,0,0,.2) inset;
+    width: 300px;
+    height: 250px;
+    margin: 1em;
+    background-color: #eeeeee;
+    padding: 1em;
+    display: block;
+    }
