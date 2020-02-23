@@ -1,0 +1,16 @@
+---
+layout: flexpage
+title: Ryhmät
+---
+
+{% for group in site.data.ryhmat %}
+<div class="flex-item">
+  <img class="circle-icon" src="{{site.baseurl}}/assets/img/{{group.slug}}_pieni.jpg" />
+  <a href="https://t.me/{{group.chat}}">
+    <h4>{{group.name}}</h4>
+  </a>
+  <br />
+  <p>{{group.description}}</p>
+  <p>Ohjeet: {{group.help}}</p>
+</div>
+{% endfor %}
