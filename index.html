@@ -6,7 +6,9 @@ hide: true
 
 {% for group in site.data.ryhmat %}
 <div class="flex-item">
-  <img class="circle-icon" src="{{site.baseurl}}/assets/img/{{group.slug}}_pieni.jpg" />
+  <div class="circle-cropper">
+    <img class="circle-icon" src="{{site.baseurl}}/assets/img/{{group.slug}}_pieni.jpg" />
+  </div>
   <a href="https://t.me/{{group.chat}}">
     <h4>{{group.name}}</h4>
   </a>

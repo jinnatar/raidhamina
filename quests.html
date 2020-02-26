@@ -4,12 +4,13 @@ title: Tehtävät
 hide: true
 ---
 
-<table class="sortable">
+<p><i>Tiedot kerätty: {{site.quests-updated}}</i></p>
+
+<table class="sortable display" id="quest_table">
   <thead>
     <tr class"header">
-      <th>Kuva</th>
+      <th width="50px"></th>
       <th>Sali</th>
-      <th>Sijainti</th>
       <th>Palkinto</th>
       <th>Tehtävä</th>
     </tr>
@@ -18,23 +19,32 @@ hide: true
 {% for quest in site.data.quests %}
 <tr>
   <td>
-    <img class="circle-icon" src="{{quest.picture}}" />
+    <div class="circle-cropper">
+      <img class="small-circle-icon" src="{{quest.pokestop.image}}" />
+    </div>
   </td>
   <td>
-    {{quest.pokestop_name}}
-  </td>
-  <td>
-    <a href="https://maps.google.com/?q={{quest.coordinates}}">
-      {{quest.coordinates}}
+    <a href="https://maps.google.com/?q={{quest.pokestop.location}}">
+    {{quest.pokestop.name}}
     </a>
   </td>
   <td>
-    {{quest.reward}}
+    <img class="reward" src="{{quest.reward.image}}" />
+    {{quest.reward.text}}
   </td>
   <td>
-    {{quest.quest}}
+    {{quest.task}}
   </td>
 </tr>
 {% endfor %}
   </tbody>
 </table>
+
+<script>
+$(document).ready( function () {
+  $('#quest_table').DataTable({
+      "dom": '<"wrapper"flipt>'
+  });
+} );
+
+</script>
