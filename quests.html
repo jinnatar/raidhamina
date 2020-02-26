@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Tehtävät
-hide: true
+permalink: tehtavat
+hide: false
 ---
 
 <p><i>Tiedot kerätty: {{site.quests-updated}}</i></p>
@@ -19,7 +20,7 @@ hide: true
 {% for quest in site.data.quests %}
 <tr>
   <td>
-    <div class="circle-cropper">
+    <div class="small-circle-cropper">
       <img class="small-circle-icon" src="{{quest.pokestop.image}}" />
     </div>
   </td>
@@ -43,7 +44,7 @@ hide: true
 <script>
 $(document).ready( function () {
   $('#quest_table').DataTable({
-      "dom": '<"wrapper"flipt>'
+      "dom": '<"wrapper"fliptp>'
   });
 } );
 
