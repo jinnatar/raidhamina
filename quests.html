@@ -11,7 +11,7 @@ hide: false
   <thead>
     <tr class"header">
       <th width="50px"></th>
-      <th>Sali</th>
+      <th>Pokestop</th>
       <th>Palkinto</th>
       <th>Tehtävä</th>
     </tr>
@@ -44,7 +44,8 @@ hide: false
 <script>
 $(document).ready( function () {
   $('#quest_table').DataTable({
-      "dom": '<"wrapper"fliptp>'
+      "dom": '<"wrapper"fliptp>',
+      "order": [[ 1, "asc" ]]
   });
 } );
 
