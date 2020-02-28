@@ -1,7 +1,7 @@
 - slug: raidhamina
   chat: RaidHaminaTalk
   name: RaidHamina
-  help: "<a href='/nostot/'>Nostot</a> | <a href='/ilmoittaudu/'>Ilmoittautuminen</a>"
+  help: "<a href='/nostot/'>Nostot</a> | <a href='/ilmoittaudu/'>Ilmoittautuminen</a> | <br /><a href='/tiedot/'>Omat Tiedot</a>"
   description:  Isojen raidien nostot ja organisointi.
 
 - slug: raidhaminaofftopic
@@ -25,5 +25,5 @@
 - slug: exraid
   chat: RaidHaminaEx
   name: RaidHaminaEx
-  help: ""
+  help: "Ei ohjeita toistaiseksi"
   description: Passien vaihdot ja Ex-Raidien organisointi.
