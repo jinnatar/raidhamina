@@ -12,6 +12,7 @@ hide: false
     <tr class"header">
       <th width="50px"></th>
       <th>Pokestop</th>
+      <th>Plus-koodi</th>
       <th>Palkinto</th>
       <th>Tehtävä</th>
     </tr>
@@ -28,6 +29,9 @@ hide: false
     <a href="https://maps.google.com/?q={{quest.pokestop.location}}">
     {{quest.pokestop.name}}
     </a>
+  </td>
+  <td>
+    {{quest.pokestop.pluscode}}
   </td>
   <td>
     <img class="reward" src="{{quest.reward.image}}" />
