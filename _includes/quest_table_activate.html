@@ -1,0 +1,18 @@
+<script>
+$(document).ready( function () {
+  var searchHash = location.hash.substr(1),
+      searchString = searchHash.substr(searchHash.indexOf('search='))
+                                .split('&')[0]
+                                .split('=')[1];
+  var table = $('#quest_table').DataTable({
+      "dom": '<"wrapper"fliptp>',
+      "order": [[ 1, "asc" ]],
+      "oSearch": { "sSearch": searchString }
+  });
+
+  table.on( 'search.dt', function () {
+       document.location.hash = 'search=' + table.search();
+  } );
+
+} );
+</script>

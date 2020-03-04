@@ -45,12 +45,4 @@ hide: false
   </tbody>
 </table>
 
-<script>
-$(document).ready( function () {
-  $('#quest_table').DataTable({
-      "dom": '<"wrapper"fliptp>',
-      "order": [[ 1, "asc" ]]
-  });
-} );
-
-</script>
+{% include quest_table_activate.html %}
