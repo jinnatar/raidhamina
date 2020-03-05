@@ -14,7 +14,7 @@ $(document).ready( function () {
        document.location.hash = 'search=' + table.search();
   } );
 
-  $("#quest_table tbody").on('click', 'a.reward', function(){
+  $("#quest_table tbody").on('click', 'a.searcher', function(){
     var searchHash = this.href;
     var searchString = decodeURIComponent(
       searchHash.substr(searchHash.indexOf('search='))
