@@ -1,7 +1,7 @@
 <script>
 $(document).ready( function () {
   var searchHash = location.hash.substr(1),
-      searchString = searchHash.substr(searchHash.indexOf('search='))
+      searchString = decodeURIComponent(searchHash.substr(searchHash.indexOf('search=')))
                                 .split('&')[0]
                                 .split('=')[1];
   var table = $('#quest_table').DataTable({
@@ -14,5 +14,19 @@ $(document).ready( function () {
        document.location.hash = 'search=' + table.search();
   } );
 
+  $("#quest_table tbody").on('click', 'a.reward', function(){
+    var searchHash = this.href;
+    var searchString = decodeURIComponent(
+      searchHash.substr(searchHash.indexOf('search='))
+                                .split('&')[0]
+                                .split('=')[1]
+    );
+    table.search(searchString).draw();
+  });
+
+  $('#clear_search').on('click', function(){
+    document.location.hash = ''; 
+    table.search('').draw();
+  });
 } );
 </script>

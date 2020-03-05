@@ -7,6 +7,8 @@ hide: false
 
 <p><i>Tiedot kerätty: {{site.quests-updated}}</i></p>
 
+<button id="clear_search">Resetoi haku</button>
+
 <table class="sortable display" id="quest_table">
   <thead>
     <tr class"header">
@@ -34,7 +36,9 @@ hide: false
     {{quest.pokestop.pluscode}}
   </td>
   <td>
-    <img class="reward" src="{{quest.reward.image}}" />
+    <a class="reward" href="#search={{quest.reward.slug}}">
+      <img class="reward" src="{{quest.reward.image}}" />
+    </a>
     {{quest.reward.text}}
   </td>
   <td>
