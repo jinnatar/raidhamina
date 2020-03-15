@@ -13,9 +13,8 @@ hide: false
 <table class="sortable display" id="quest_table">
   <thead>
     <tr class"header">
-      <th width="50px"></th>
+      <th></th>
       <th>Pokestop</th>
-      <th>Plus-koodi</th>
       <th>Palkinto</th>
       <th>Tehtävä</th>
     </tr>
@@ -30,11 +29,12 @@ hide: false
   </td>
   <td>
     <a href="https://maps.google.com/?q={{quest.pokestop.location}}">
+     <img class="helper-icon" src="{{site.baseurl}}/assets/icons/map-marker.svg" />
     {{quest.pokestop.name}}
     </a>
-  </td>
-  <td>
+    <br />
     <a class="searcher" href="#search={{quest.pokestop.olc_slug}}">
+     <img class="helper-icon" src="{{site.baseurl}}/assets/icons/magnifying-glass.svg" />
     {{quest.pokestop.pluscode}}
     </a>
   </td>

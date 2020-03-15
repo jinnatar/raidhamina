@@ -7,7 +7,7 @@ $(document).ready( function () {
   var table = $('#quest_table').DataTable({
       "dom": '<"wrapper"fliptp>',
       "order": [[ 1, "asc" ]],
-      "oSearch": { "sSearch": searchString }
+      "oSearch": { "sSearch": searchString },
   });
 
   table.on( 'search.dt', function () {
