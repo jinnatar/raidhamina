@@ -5,3 +5,11 @@ table#quest_table{
   border-collapse: collapse;
   table-layout: fixed;
 }
+
+table.dataTable tbody tr {
+  background-color: var(--color-secondary) !important;
+}
+
+table.dataTable tr.odd {
+  background-color: var(--color-primary) !important;
+}
