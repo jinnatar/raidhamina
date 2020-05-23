@@ -10,6 +10,15 @@ hide: false
 <button id="clear_search">Resetoi haku</button>
 <button id="gps_search">Hae sijantini viereiset</button>
 
+{% assign rewards = site.data.quests | map: 'reward' | map: 'core' | sort_natural: 'slug' | uniq %}
+{% for reward in rewards %}
+<div class="small-circle-cropper">
+  <a class="searcher" href="#search={{reward.slug}}">
+    <img class="reward" src="{{reward.image}}" />
+  </a>
+</div>
+{% endfor %}
+
 <table class="sortable compact stripe hover row-border" id="quest_table">
   <thead>
     <tr class"header">
@@ -39,8 +48,8 @@ hide: false
     </a>
   </td>
   <td>
-    <a class="searcher" href="#search={{quest.reward.slug}}">
-      <img class="reward" src="{{quest.reward.image}}" />
+    <a class="searcher" href="#search={{quest.reward.core.slug}}">
+      <img class="reward" src="{{quest.reward.core.image}}" />
     </a>
     {{quest.reward.text}}
   </td>

@@ -23,6 +23,15 @@ $(document).ready( function () {
     );
     table.search(searchString).draw();
   });
+  $("body").on('click', 'a.searcher', function(){
+    var searchHash = this.href;
+    var searchString = decodeURIComponent(
+      searchHash.substr(searchHash.indexOf('search='))
+                                .split('&')[0]
+                                .split('=')[1]
+    );
+    table.search(searchString).draw();
+  });
 
   $('#clear_search').on('click', function(){
     document.location.hash = ''; 
