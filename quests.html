@@ -38,15 +38,22 @@ hide: false
     </div>
   </td>
   <td>
-    <a href="https://maps.google.com/?q={{quest.pokestop.location}}">
-     <img class="helper-icon" src="{{site.baseurl}}/assets/icons/map-marker.svg" />
-    {{quest.pokestop.name}}
-    </a>
-    <br />
-    <a class="searcher" href="#search={{quest.pokestop.olc_slug}}">
-     <img class="helper-icon" src="{{site.baseurl}}/assets/icons/magnifying-glass.svg" />
-    {{quest.pokestop.pluscode}}
-    </a>
+    <p style="float: left;">
+      <a href="https://maps.google.com/?q={{quest.pokestop.location}}">
+        <div class="tiny-icon">
+          {% include map-marker.svg %}
+        </div>
+        {{quest.pokestop.name}}
+      </a>
+    </p>
+    <p style="clear: both; float: left;">
+      <a class="searcher" href="#search={{quest.pokestop.olc_slug}}">
+      <div class="tiny-icon">
+        {% include magnifying-glass.svg %}
+      </div>
+      {{quest.pokestop.pluscode}}
+      </a>
+    </p>
   </td>
   <td class="hidden_column">
     <p>{{quest.pokestop.olc_adjacent | split: ','}}</p>
