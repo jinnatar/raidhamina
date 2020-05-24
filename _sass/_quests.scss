@@ -27,3 +27,7 @@ svg {
   height: 50px;
   fill: var(--color-accent);
 }
+
+.hidden_column {
+  visibility: collapse;
+}

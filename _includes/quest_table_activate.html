@@ -8,6 +8,10 @@ $(document).ready( function () {
       "dom": '<"wrapper"fliptp>',
       "order": [[ 1, "asc" ]],
       "oSearch": { "sSearch": searchString },
+      "columnDefs": [
+        { "visible": false, "targets": 2 }
+      ],
+      "pageLength": 50
   });
 
   table.on( 'search.dt', function () {

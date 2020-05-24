@@ -24,6 +24,7 @@ hide: false
     <tr class"header">
       <th></th>
       <th>Pokestop</th>
+      <th class="hidden_column">Viereiset alueet</th>
       <th>Palkinto</th>
       <th>Tehtävä</th>
     </tr>
@@ -46,6 +47,9 @@ hide: false
      <img class="helper-icon" src="{{site.baseurl}}/assets/icons/magnifying-glass.svg" />
     {{quest.pokestop.pluscode}}
     </a>
+  </td>
+  <td class="hidden_column">
+    <p>{{quest.pokestop.olc_adjacent | split: ','}}</p>
   </td>
   <td>
     <a class="searcher" href="#search={{quest.reward.core.slug}}">
