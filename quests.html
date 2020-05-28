@@ -10,13 +10,17 @@ hide: false
 <div title="Nollaa haku" class="small-circle-cropper" id="clear_search">{% include reset.svg %}</div>
 <div title="Hae viereiset" class="small-circle-cropper" id="gps_search">{% include location.svg %}</div>
 
-{% assign rewards = site.data.quests | map: 'reward' | map: 'core' | sort_natural: 'slug' | uniq %}
+{% assign reward_types = "item, stardust, pokemon" | split: ", " %}
+{% for type in reward_types %}
+<!-- {{type}}  -->
+{% assign rewards = site.data.quests | map: 'reward' | map: 'core' | where: 'type', type | sort_natural: 'slug' | uniq %}
 {% for reward in rewards %}
 <div class="small-circle-cropper">
   <a class="searcher" href="#search={{reward.slug}}">
     <img class="reward" src="{{reward.image}}" />
   </a>
 </div>
+{% endfor %}
 {% endfor %}
 
 <table class="sortable compact stripe hover row-border" id="quest_table">
