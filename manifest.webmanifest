@@ -20,13 +20,6 @@
   "theme_color": "#C3073F",
   "shortcuts": [
     {
-      "name": "RaidHamina Ryhmät",
-      "short_name": "Ryhmät",
-      "description": "Näytä kaikki ryhmät",
-      "url": "/",
-      "icons": [{ "src": "/assets/img/raidhaminahighlevel_192.png", "sizes": "192x192" }]
-    },
-    {
       "name": "RaidHamina Tehtävät",
       "short_name": "Tehtävät",
       "description": "Näytä päivän tehtävät",
