@@ -1,0 +1,37 @@
+{
+  "short_name": "RaidHamina",
+  "name": "RaidHamina: Tehtävät & Ohjeet",
+  "icons": [
+    {
+      "src": "/assets/img/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/img/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/tehtavat",
+  "background_color": "#1F2833",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#C3073F",
+  "shortcuts": [
+    {
+      "name": "RaidHamina Ryhmät",
+      "short_name": "Ryhmät",
+      "description": "Näytä kaikki ryhmät",
+      "url": "/",
+      "icons": [{ "src": "/assets/img/raidhaminahighlevel_192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "RaidHamina Tehtävät",
+      "short_name": "Tehtävät",
+      "description": "Näytä päivän tehtävät",
+      "url": "/tehtavat",
+      "icons": [{ "src": "/assets/img/map.png", "sizes": "192x192" }]
+    }
+  ]
+}
