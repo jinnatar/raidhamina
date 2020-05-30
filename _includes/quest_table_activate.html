@@ -13,8 +13,11 @@ $( function () {
       ],
       "pageLength": 50,
       "initComplete": function(){
-        $('#loading').remove();
         $('#quest_table').css('visibility', 'visible');
+        $('#loading img').animate({
+          height: 0,
+          opacity: 0
+        }, 500, "swing");
       },
   });
 
