@@ -1,5 +1,5 @@
 <script>
-$(document).ready( function () {
+$( function () {
   var searchHash = location.hash.substr(1),
       searchString = decodeURIComponent(searchHash.substr(searchHash.indexOf('search=')))
                                 .split('&')[0]
@@ -11,7 +11,10 @@ $(document).ready( function () {
       "columnDefs": [
         { "visible": false, "targets": 2 }
       ],
-      "pageLength": 50
+      "pageLength": 50,
+      "initComplete": function(){
+        $('#quest_table').css('visibility', 'visible');
+      },
   });
 
   table.on( 'search.dt', function () {
@@ -38,14 +41,14 @@ $(document).ready( function () {
   });
 
   $('#clear_search').on('click', function(){
-    document.location.hash = ''; 
+    document.location.hash = '';
     table.search('').draw();
   });
 
   if ("geolocation" in navigator){
     $('#gps_search').show();
     $('#gps_search').on('click', function(){
-      navigator.geolocation.getCurrentPosition(function(position){ 
+      navigator.geolocation.getCurrentPosition(function(position){
         console.log(position.coords.latitude, position.coords.longitude);
         var fullCode = OpenLocationCode.encode(position.coords.latitude, position.coords.longitude);
         var searchString = fullCode.substr(4, 4);
