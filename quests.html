@@ -5,7 +5,11 @@ permalink: tehtavat
 hide: false
 ---
 
-<p><i>Tiedot kerätty: {{site.quests-updated}}</i></p>
+<p id="data-age" data-timestamp="{{site.quests-updated}}">
+  <i>Tiedot kerätty: {{site.quests-updated}}</i>
+  <button id="data-refresh" style="display: none;">Tiedot vanhentuneet, Päivitä?</button>
+</p>
+
 
 <div title="Nollaa haku" class="small-circle-cropper" id="clear_search">{% include reset.svg %}</div>
 <div title="Hae viereiset" class="small-circle-cropper" id="gps_search">{% include location.svg %}</div>
@@ -78,5 +82,6 @@ hide: false
 {% endfor %}
   </tbody>
 </table>
-
-{% include quest_table_activate.html %}
+<script src="assets/js/quest_table.js"></script>
+<script src="assets/js/olc.js"></script>
+<script src="assets/js/visibility.js"></script>
