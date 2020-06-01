@@ -3,7 +3,7 @@
 // set names for both precache & runtime cache
 workbox.core.setCacheNameDetails({
     prefix: 'raidhamina',
-    suffix: 'v1',
+    suffix: 'v1.1',
     precache: 'precache',
     runtime: 'runtime-cache'
 });
@@ -17,7 +17,7 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest);
 
 // use `networkFirst` strategy for all shortlinked pages
 workbox.routing.registerRoute(
-    new RegExp('/^[^.]+$/'),
+    /^[^.]+$/,
     workbox.strategies.networkFirst()
 );
 
