@@ -44,3 +44,11 @@ workbox.routing.registerRoute(
     /^https?:\/\/cdn.jsdelivr.net/,
     workbox.strategies.staleWhileRevalidate()
 );
+workbox.routing.registerRoute(
+    /^https?:\/\/lh3.googleusercontent.com/,
+    workbox.strategies.staleWhileRevalidate()
+);
+workbox.routing.registerRoute(
+    /^https?:\/\/cdn.datatables.net/,
+    workbox.strategies.staleWhileRevalidate()
+);
