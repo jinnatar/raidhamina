@@ -1,0 +1,86 @@
+---
+layout: page
+title: Gruntit
+permalink: gruntit
+hide: false
+---
+
+<p id="data-age" data-timestamp="{{site.incidents-updated}}">
+  <i>Tiedot kerätty: {{site.incidents-updated}}</i>
+  <button id="data-refresh" style="display: none;">Tiedot vanhentuneet, Päivitä?</button>
+</p>
+
+
+<div title="Nollaa haku" class="small-circle-cropper" id="clear_search">{% include reset.svg %}</div>
+<div title="Hae viereiset" class="small-circle-cropper" id="gps_search">{% include location.svg %}</div>
+
+{% assign reward_types = "CEO, Exec, Grunt, Unknown" | split: ", " %}
+{% for type in reward_types %}
+<!-- {{type}}  -->
+{% assign rewards = site.data.incidents | map: 'reward' | map: 'core' | where: 'type', type | sort_natural: 'slug' | uniq %}
+{% for reward in rewards %}
+<div class="small-circle-cropper">
+  <a class="searcher" href="#search={{reward.slug}}">
+    <img class="reward" src="{{reward.image}}" />
+  </a>
+</div>
+{% endfor %}
+{% endfor %}
+
+<div id="loading" style="display: block;">
+  <img src="/assets/img/psyduck.gif" alt="Loading..." />
+</div>
+<table class="sortable compact stripe hover row-border" id="quest_table" style="visibility: hidden;">
+  <thead>
+    <tr class"header">
+      <th></th>
+      <th>Pokestop</th>
+      <th class="hidden_column">Viereiset alueet</th>
+      <th>R</th>
+      <th>Poistuu</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for incident in site.data.incidents %}
+<tr id="{{incident.pokestop.uuid}}">
+  <td>
+    <div class="small-circle-cropper">
+      <img class="small-circle-icon" src="{{incident.pokestop.image}}=s50" />
+    </div>
+  </td>
+  <td>
+    <p style="float: left;">
+      <a href="https://maps.google.com/?q={{incident.pokestop.location}}">
+        <div class="tiny-icon">
+          {% include map-marker.svg %}
+        </div>
+        {{incident.pokestop.name}}
+      </a>
+    </p>
+    <p style="clear: both; float: left;">
+      <a class="searcher" href="#search={{incident.pokestop.olc_slug}}">
+      <div class="tiny-icon">
+        {% include magnifying-glass.svg %}
+      </div>
+      {{incident.pokestop.pluscode}}
+      </a>
+    </p>
+  </td>
+  <td class="hidden_column">
+    <p>{{incident.pokestop.olc_adjacent | split: ','}}</p>
+  </td>
+  <td>
+    <a class="searcher" href="#search={{incident.reward.core.slug}}">
+      <img class="reward" src="{{incident.reward.core.image}}" />
+    </a>
+    {{incident.reward.text}}
+  </td>
+  <td>
+    {{incident.reward.end}}
+  </td>
+</tr>
+{% endfor %}
+  </tbody>
+</table>
+<script src="assets/js/quest_table.js"></script>
+<script src="assets/js/olc.js"></script>
