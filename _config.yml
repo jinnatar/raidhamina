@@ -17,10 +17,3 @@ theme: minima
 # Build settings
 markdown: kramdown
 destination: /srv/www/ro/raidhamina
-
-plugins:
-  - jekyll-pwa-plugin
-
-pwa:
-  enabled: true # Optional
-  dest_js_directory: assets/js # Required
