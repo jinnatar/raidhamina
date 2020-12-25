@@ -77,10 +77,12 @@ hide: false
   </td>
   <td>
     {{incident.reward.end}}
+    <div class="countdown" endtime="{{incident.reward.endfull}}"></div>
   </td>
 </tr>
 {% endfor %}
   </tbody>
 </table>
 <script src="assets/js/quest_table.js"></script>
+<script src="assets/js/countdown.js"></script>
 <script src="assets/js/olc.js"></script>
