@@ -8,7 +8,7 @@ $( function () {
       "order": [[ 1, "asc" ]],
       "oSearch": { "sSearch": searchString },
       "columnDefs": [
-        { "visible": false, "targets": 2 }
+        { "visible": false, "targets": [2, 4] }
       ],
       "pageLength": 50,
       "initComplete": function(){
