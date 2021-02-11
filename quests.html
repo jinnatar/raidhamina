@@ -37,6 +37,7 @@ hide: false
       <th>Pokestop</th>
       <th class="hidden_column">Viereiset alueet</th>
       <th>Palkinto</th>
+      <th class="hidden_column">Palkinnon hakudata</th>
       <th>Tehtävä</th>
     </tr>
   </thead>
@@ -74,6 +75,9 @@ hide: false
       <img class="reward" src="{{quest.reward.core.image}}" />
     </a>
     {{quest.reward.text}}
+  </td>
+  <td class="hidden_column">
+    <p>{{quest.reward.core.slug}}</p>
   </td>
   <td>
     {{quest.task}}
