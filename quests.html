@@ -21,7 +21,10 @@ hide: false
 {% for reward in rewards %}
 <div class="small-circle-cropper">
   <a class="searcher" href="#search={{reward.slug}}">
-    <img class="reward" src="{{reward.image}}" />
+    <div class"primary_image"><img class="reward" src="{{reward.image}}" /></div>
+    {% if reward.accent_image %}
+    <div class="accent_image"><img class="reward_accent" src="{{reward.accent_image}}" /></div>
+    {% endif %}
   </a>
 </div>
 {% endfor %}
@@ -72,7 +75,12 @@ hide: false
   </td>
   <td>
     <a class="searcher" href="#search={{quest.reward.core.slug}}">
-      <img class="reward" src="{{quest.reward.core.image}}" />
+      <div style="position: relative;">
+        <div class"primary_image"><img class="reward" src="{{quest.reward.core.image}}" /></div>
+        {% if incident.reward.core.accent_image %}
+        <div class="accent_image"><img class="reward_accent" src="{{quest.reward.core.accent_image}}" /></div>
+        {% endif %}
+      </div>
     </a>
     {{quest.reward.text}}
   </td>
