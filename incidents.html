@@ -17,7 +17,7 @@ hide: false
 {% assign reward_types = "CEO, Exec, Grunt, Challenger, Unknown" | split: ", " %}
 {% for type in reward_types %}
 <!-- {{type}}  -->
-{% assign rewards = site.data.incidents | map: 'reward' | map: 'core' | where: 'type', type | sort_natural: 'slug' | uniq %}
+{% assign rewards = site.data.dyn.incidents | map: 'reward' | map: 'core' | where: 'type', type | sort_natural: 'slug' | uniq %}
 {% for reward in rewards %}
 <div class="small-circle-cropper">
   <a class="searcher" href="#search={{reward.slug}}">
@@ -44,7 +44,7 @@ hide: false
     </tr>
   </thead>
   <tbody>
-{% for incident in site.data.incidents %}
+{% for incident in site.data.dyn.incidents %}
 <tr id="{{incident.pokestop.uuid}}">
   <td>
     <div class="small-circle-cropper">

@@ -17,7 +17,7 @@ hide: false
 {% assign reward_types = "resource, candy, item, pokemon" | split: ", " %}
 {% for type in reward_types %}
 <!-- {{type}}  -->
-{% assign rewards = site.data.quests | map: 'reward' | map: 'core' | where: 'type', type | sort_natural: 'slug' | uniq %}
+{% assign rewards = site.data.dyn.quests | map: 'reward' | map: 'core' | where: 'type', type | sort_natural: 'slug' | uniq %}
 {% for reward in rewards %}
 <div class="small-circle-cropper">
   <a class="searcher" href="#search={{reward.slug}}">
@@ -45,7 +45,7 @@ hide: false
     </tr>
   </thead>
   <tbody>
-{% for quest in site.data.quests %}
+{% for quest in site.data.dyn.quests %}
 <tr id="{{quest.pokestop.uuid}}">
   <td>
     <div class="small-circle-cropper">
