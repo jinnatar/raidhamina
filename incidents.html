@@ -14,7 +14,7 @@ hide: false
 <div title="Nollaa haku" class="small-circle-cropper" id="clear_search">{% include reset.svg %}</div>
 <div title="Hae viereiset" class="small-circle-cropper" id="gps_search">{% include location.svg %}</div>
 
-{% assign reward_types = "CEO, Exec, Grunt, Challenger, Unknown" | split: ", " %}
+{% assign reward_types = "Pokemon, CEO, Exec, Grunt, Challenger, Unknown" | split: ", " %}
 {% for type in reward_types %}
 <!-- {{type}}  -->
 {% assign rewards = site.data.dyn.incidents | map: 'reward' | map: 'core' | where: 'type', type | sort_natural: 'slug' | uniq %}
