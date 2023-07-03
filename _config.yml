@@ -13,8 +13,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 basedomain: "raidhamina.nocturnal.fi"
 url: "https://raidhamina.nocturnal.fi" # the base hostname & protocol for your site
 theme: minima
-markdown: kramdown
 
-# Work around noisy deprecations
-sass:
-  quiet_deps: true
+# Build settings
+markdown: kramdown
+destination: /srv/www/ro/raidhamina
