@@ -14,10 +14,10 @@ hide: false
 <div title="Nollaa haku" class="small-circle-cropper" id="clear_search">{% include reset.svg %}</div>
 <div title="Hae viereiset" class="small-circle-cropper" id="gps_search">{% include location.svg %}</div>
 
-{% assign reward_types = "resource, candy, item, pokemon" | split: ", " %}
+{% assign reward_types = "MEGA_ENERGY, STARDUST, CANDY, ITEM, POKEMON, UNKNOWN" | split: ", " %}
 {% for type in reward_types %}
 <!-- {{type}}  -->
-{% assign rewards = site.data.dyn.quests | map: 'reward' | map: 'core' | where: 'type', type | sort_natural: 'slug' | uniq %}
+{% assign rewards = site.data.dyn.quests | map: 'reward' | where: 'type', type | sort_natural: 'slug' | uniq %}
 {% for reward in rewards %}
 <div class="small-circle-cropper">
   <a class="searcher" href="#search={{reward.slug}}">
@@ -74,18 +74,18 @@ hide: false
     <p>{{quest.pokestop.olc_adjacent | split: ','}}</p>
   </td>
   <td>
-    <a class="searcher" href="#search={{quest.reward.core.slug}}">
+    <a class="searcher" href="#search={{quest.reward.slug}}">
       <div style="position: relative;">
-        <div class"primary_image"><img class="reward" src="{{quest.reward.core.image}}" /></div>
-        {% if quest.reward.core.accent_image %}
-        <div class="accent_image"><img class="reward_accent" src="{{quest.reward.core.accent_image}}" /></div>
+        <div class"primary_image"><img class="reward" src="{{quest.reward.image}}" /></div>
+        {% if quest.reward.accent_image %}
+        <div class="accent_image"><img class="reward_accent" src="{{quest.reward.accent_image}}" /></div>
         {% endif %}
       </div>
     </a>
-    {{quest.reward.text}}
+    {{quest.reward.name}}
   </td>
   <td class="hidden_column">
-    <p>{{quest.reward.core.slug}}</p>
+    <p>{{quest.reward.slug}}</p>
   </td>
   <td>
     {{quest.task}}

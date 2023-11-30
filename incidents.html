@@ -17,7 +17,7 @@ hide: false
 {% assign reward_types = "GOLDEN, SHOWCASE, POKEMON, CEO, EXEC, GRUNT, CHALLENGER, UNKNOWN" | split: ", " %}
 {% for type in reward_types %}
 <!-- {{type}}  -->
-{% assign rewards = site.data.dyn.incidents | map: 'reward' | map: 'core' | where: 'type', type | sort_natural: 'slug' | uniq %}
+{% assign rewards = site.data.dyn.incidents | map: 'reward' | where: 'type', type | sort_natural: 'slug' | uniq %}
 {% for reward in rewards %}
 <div class="small-circle-cropper">
   <a class="searcher" href="#search={{reward.slug}}">
@@ -73,15 +73,15 @@ hide: false
     <p>{{incident.pokestop.olc_adjacent | split: ','}}</p>
   </td>
   <td>
-    <a class="searcher" href="#search={{incident.reward.core.slug}}">
+    <a class="searcher" href="#search={{incident.reward.slug}}">
       <div style="position: relative;">
-      <div class"primary_image"><img class="reward" src="{{incident.reward.core.image}}" /></div>
-      {% if incident.reward.core.accent_image %}
-      <div class="accent_image"><img class="reward_accent" src="{{incident.reward.core.accent_image}}" /></div>
+      <div class"primary_image"><img class="reward" src="{{incident.reward.image}}" /></div>
+      {% if incident.reward.accent_image %}
+      <div class="accent_image"><img class="reward_accent" src="{{incident.reward.accent_image}}" /></div>
       {% endif %}
       </div>
     </a>
-    {{incident.reward.text}}
+    {{incident.reward.name}}
   </td>
   <td>
     {{incident.reward.end}}
