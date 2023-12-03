@@ -17,7 +17,7 @@ hide: false
 {% assign reward_types = "MEGA_ENERGY, STARDUST, CANDY, ITEM, POKEMON, UNKNOWN" | split: ", " %}
 {% for type in reward_types %}
 <!-- {{type}}  -->
-{% assign rewards = site.data.dyn.quests | map: 'reward' | where: 'type', type | sort_natural: 'slug' | uniq %}
+{% assign rewards = site.data.dyn.quests | map: 'archetype' | where: 'type', type | sort_natural: 'slug' | uniq %}
 {% for reward in rewards %}
 <div class="small-circle-cropper">
   <a class="searcher" href="#search={{reward.slug}}">

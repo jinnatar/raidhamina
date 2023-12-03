@@ -17,7 +17,7 @@ hide: false
 {% assign reward_types = "GOLDEN, SHOWCASE, POKEMON, CEO, EXEC, GRUNT, CHALLENGER, UNKNOWN" | split: ", " %}
 {% for type in reward_types %}
 <!-- {{type}}  -->
-{% assign rewards = site.data.dyn.incidents | map: 'reward' | where: 'type', type | sort_natural: 'slug' | uniq %}
+{% assign rewards = site.data.dyn.incidents | map: 'archetype' | where: 'type', type | sort_natural: 'slug' | uniq %}
 {% for reward in rewards %}
 <div class="small-circle-cropper">
   <a class="searcher" href="#search={{reward.slug}}">
