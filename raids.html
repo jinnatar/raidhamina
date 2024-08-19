@@ -40,6 +40,7 @@ hide: false
       <th>Gym</th>
       <th class="hidden_column">Viereiset alueet</th>
       <th>Raidboss</th>
+      <th>Poistuu</th>
     </tr>
   </thead>
   <tbody>
@@ -82,8 +83,9 @@ hide: false
     </a>
     {{raid.reward.name}}
   </td>
-  <td class="hidden_column">
-    <p>{{raid.reward.slug}}</p>
+  <td>
+    {{incident.reward.end}}
+    <div class="countdown" endtime="{{incident.reward.endfull}}"></div>
   </td>
 </tr>
 {% endfor %}
