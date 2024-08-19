@@ -1,0 +1,93 @@
+---
+layout: page
+title: Raidit
+permalink: raidit
+hide: false
+---
+
+<p id="data-age" data-timestamp="{{site.raids-updated}}">
+  <i>Tiedot kerätty: {{site.raids-updated}}</i>
+  <button id="data-refresh" style="display: none;">Tiedot vanhentuneet, Päivitä?</button>
+</p>
+
+
+<div title="Nollaa haku" class="small-circle-cropper" id="clear_search">{% include reset.svg %}</div>
+<div title="Hae viereiset" class="small-circle-cropper" id="gps_search">{% include location.svg %}</div>
+
+{% assign reward_types = "LEGENDARY_SHADOW, PRIMAL, ELITE, ULTRA_BEAST, LEGENDARY_MEGA, MEGA, LEGENDARY, FOUR, SHADOW_3, THREE, SHADOW_1, ONE, UNKNOWN" | split: ", " %}
+{% for type in reward_types %}
+<!-- {{type}}  -->
+{% assign rewards = site.data.dyn.raids | map: 'archetype' | where: 'type', type | sort_natural: 'slug' | uniq %}
+{% for reward in rewards %}
+<div class="small-circle-cropper">
+  <a class="searcher" href="#search={{reward.slug}}">
+    <div class"primary_image"><img class="reward" src="{{reward.image}}" /></div>
+    {% if reward.accent_image %}
+    <div class="accent_image"><img class="reward_accent" src="{{reward.accent_image}}" /></div>
+    {% endif %}
+  </a>
+</div>
+{% endfor %}
+{% endfor %}
+
+<div id="loading" style="display: block;">
+  <img src="/assets/img/psyduck.gif" alt="Loading..." />
+</div>
+<table class="sortable compact stripe hover row-border" id="raid_table" style="visibility: hidden;">
+  <thead>
+    <tr class"header">
+      <th></th>
+      <th>Gym</th>
+      <th class="hidden_column">Viereiset alueet</th>
+      <th>Raidboss</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for raid in site.data.dyn.raids %}
+<tr id="{{raid.location.uuid}}">
+  <td>
+    <div class="small-circle-cropper">
+      <img class="small-circle-icon" src="{{raid.location.image}}=s50" />
+    </div>
+  </td>
+  <td>
+    <p style="float: left;">
+      <a href="https://maps.google.com/?q={{raid.location.location}}">
+        <div class="tiny-icon">
+          {% include map-marker.svg %}
+        </div>
+        {{raid.location.name}}
+      </a>
+    </p>
+    <p style="clear: both; float: left;">
+      <a class="searcher" href="#search={{raid.location.olc_slug}}">
+      <div class="tiny-icon">
+        {% include magnifying-glass.svg %}
+      </div>
+      {{raid.location.pluscode}}
+      </a>
+    </p>
+  </td>
+  <td class="hidden_column">
+    <p>{{raid.location.olc_adjacent | split: ','}}</p>
+  </td>
+  <td>
+    <a class="searcher" href="#search={{raid.reward.slug}}">
+      <div style="position: relative;">
+        <div class"primary_image"><img class="reward" src="{{raid.reward.image}}" /></div>
+        {% if raid.reward.accent_image %}
+        <div class="accent_image"><img class="reward_accent" src="{{raid.reward.accent_image}}" /></div>
+        {% endif %}
+      </div>
+    </a>
+    {{raid.reward.name}}
+  </td>
+  <td class="hidden_column">
+    <p>{{raid.reward.slug}}</p>
+  </td>
+</tr>
+{% endfor %}
+  </tbody>
+</table>
+<script src="assets/js/raid_table.js"></script>
+<script src="assets/js/olc.js"></script>
