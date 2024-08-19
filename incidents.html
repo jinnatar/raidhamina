@@ -45,32 +45,32 @@ hide: false
   </thead>
   <tbody>
 {% for incident in site.data.dyn.incidents %}
-<tr id="{{incident.pokestop.uuid}}">
+<tr id="{{incident.location.uuid}}">
   <td>
     <div class="small-circle-cropper">
-      <img class="small-circle-icon" src="{{incident.pokestop.image}}=s50" />
+      <img class="small-circle-icon" src="{{incident.location.image}}=s50" />
     </div>
   </td>
   <td>
     <p style="float: left;">
-      <a href="https://maps.google.com/?q={{incident.pokestop.location}}">
+      <a href="https://maps.google.com/?q={{incident.location.location}}">
         <div class="tiny-icon">
           {% include map-marker.svg %}
         </div>
-        {{incident.pokestop.name}}
+        {{incident.location.name}}
       </a>
     </p>
     <p style="clear: both; float: left;">
-      <a class="searcher" href="#search={{incident.pokestop.olc_slug}}">
+      <a class="searcher" href="#search={{incident.location.olc_slug}}">
       <div class="tiny-icon">
         {% include magnifying-glass.svg %}
       </div>
-      {{incident.pokestop.pluscode}}
+      {{incident.location.pluscode}}
       </a>
     </p>
   </td>
   <td class="hidden_column">
-    <p>{{incident.pokestop.olc_adjacent | split: ','}}</p>
+    <p>{{incident.location.olc_adjacent | split: ','}}</p>
   </td>
   <td>
     <a class="searcher" href="#search={{incident.reward.slug}}">

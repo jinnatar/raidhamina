@@ -46,32 +46,32 @@ hide: false
   </thead>
   <tbody>
 {% for quest in site.data.dyn.quests %}
-<tr id="{{quest.pokestop.uuid}}">
+<tr id="{{quest.location.uuid}}">
   <td>
     <div class="small-circle-cropper">
-      <img class="small-circle-icon" src="{{quest.pokestop.image}}=s50" />
+      <img class="small-circle-icon" src="{{quest.location.image}}=s50" />
     </div>
   </td>
   <td>
     <p style="float: left;">
-      <a href="https://maps.google.com/?q={{quest.pokestop.location}}">
+      <a href="https://maps.google.com/?q={{quest.location.location}}">
         <div class="tiny-icon">
           {% include map-marker.svg %}
         </div>
-        {{quest.pokestop.name}}
+        {{quest.location.name}}
       </a>
     </p>
     <p style="clear: both; float: left;">
-      <a class="searcher" href="#search={{quest.pokestop.olc_slug}}">
+      <a class="searcher" href="#search={{quest.location.olc_slug}}">
       <div class="tiny-icon">
         {% include magnifying-glass.svg %}
       </div>
-      {{quest.pokestop.pluscode}}
+      {{quest.location.pluscode}}
       </a>
     </p>
   </td>
   <td class="hidden_column">
-    <p>{{quest.pokestop.olc_adjacent | split: ','}}</p>
+    <p>{{quest.location.olc_adjacent | split: ','}}</p>
   </td>
   <td>
     <a class="searcher" href="#search={{quest.reward.slug}}">
