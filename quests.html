@@ -14,7 +14,7 @@ hide: false
 <div title="Nollaa haku" class="small-circle-cropper" id="clear_search">{% include reset.svg %}</div>
 <div title="Hae viereiset" class="small-circle-cropper" id="gps_search">{% include location.svg %}</div>
 
-{% assign reward_types = "MEGA_ENERGY, STARDUST, CANDY, ITEM, POKEMON, UNKNOWN" | split: ", " %}
+{% assign reward_types = "MEGA_ENERGY, EXP, STARDUST, CANDY, ITEM, POKEMON, UNKNOWN" | split: ", " %}
 {% for type in reward_types %}
 <!-- {{type}}  -->
 {% assign rewards = site.data.dyn.quests | map: 'archetype' | where: 'type', type | sort_natural: 'slug' | uniq %}
