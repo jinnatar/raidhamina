@@ -9,21 +9,3 @@
   name: RaidHamina Offtopic
   help: "<a href='/nostot/'>Nostot</a>"
   description:  Sekalainen jutustelu ja pienien raidien nostot.
-
-- slug: raidhaminalowlevel
-  chat: RaidHaminaLowLevel
-  name: "RaidHamina Pienet (1*, 2*, 3*)"
-  help: "<a href='/nostot/'>Nostot</a>"
-  description: Automaattisesti kaikki pienet raidit.
-
-- slug: raidhaminahighlevel
-  chat: RaidHaminaHighLevel
-  name: "RaidHamina Isot (4*, 5*)"
-  help: "<a href='/nostot/'>Nostot</a>"
-  description: Automaattisesti kaikki isot raidit.
-
-- slug: exraid
-  chat: RaidHaminaEx
-  name: RaidHaminaEx
-  help: "Ei ohjeita toistaiseksi"
-  description: Passien vaihdot ja Ex-Raidien organisointi.
