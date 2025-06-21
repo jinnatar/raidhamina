@@ -1,0 +1,23 @@
+min_version = "2024.9.5"
+
+[env]
+# Project information
+PROJECT_NAME = "{{ config_root | basename }}"
+
+[tools]
+# Install Ruby with the specified version
+ruby = "{{ get_env(name='RUBY_VERSION', default='3.4.3') }}"
+
+[tasks."bundle:install"]
+description = "Install gem dependencies"
+run = "bundle install"
+
+[tasks.build]
+description = "Jekyll build"
+alias = "b"
+run = "bundle exec jekyll build"
+
+[tasks.server]
+description = "Start the Rails server"
+alias = "s"
+run = "bundle exec jekyll serve -H 0.0.0.0"

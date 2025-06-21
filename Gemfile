@@ -8,3 +8,10 @@ gem "jekyll"
 gem "minima"
 
 # gem "rails"
+#
+#  Shit that the above should take care of, but don't
+gem "rake"
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "logger"
